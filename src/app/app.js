@@ -14,25 +14,6 @@ const App = () => {
   const removeForm = (index) =>
     setFormData(formData.filter((item, i) => i !== index));
 
-  //# attempt 1 -- does NOT work
-  // const handleChange = (e, index) => {
-  //   console.log(`index: ${index}`);
-  //   console.log(`property name: ${e.target.name}`);
-  //   const newArr = [...formData];
-  //   newArr[index] = e.target.value;
-  //   console.log(newArr);
-  // };
-
-  // //attempt2 -- does not work
-  // const handleChange = (e, index) => {
-  //   const { name, value } = e.target;
-  //   // formData.map((item, i) => console.log(formData[index][name]));
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [index]: { ...prevState[index], name: value },
-  //   }));
-  // };
-
   const handleChange = (e, index) => {
     const { name, value } = e.target;
     setFormData(
@@ -56,3 +37,22 @@ const App = () => {
 };
 
 export default App;
+
+//# attempt 1 -- does NOT work
+// const handleChange = (e, index) => {
+//   console.log(`index: ${index}`);
+//   console.log(`property name: ${e.target.name}`);
+//   const newArr = [...formData];
+//   newArr[index] = e.target.value;
+//   console.log(newArr);
+// };
+
+// //attempt2 -- does not work
+// const handleChange = (e, index) => {
+//   const { name, value } = e.target;
+//   // formData.map((item, i) => console.log(formData[index][name]));
+//   setFormData((prevState) => ({
+//     ...prevState,
+//     [index]: { ...prevState[index], name: value },
+//   }));
+// };
